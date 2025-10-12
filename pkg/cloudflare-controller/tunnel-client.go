@@ -5,10 +5,11 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/exposure"
 	"github.com/cloudflare/cloudflare-go"
 	"github.com/go-logr/logr"
 	"github.com/pkg/errors"
+
+	"github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/exposure"
 )
 
 type TunnelClientInterface interface {

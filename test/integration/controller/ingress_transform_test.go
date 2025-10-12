@@ -5,8 +5,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/controller"
-	"github.com/STRRL/cloudflare-tunnel-ingress-controller/test/fixtures"
 	"github.com/go-logr/stdr"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -14,6 +12,9 @@ import (
 	networkingv1 "k8s.io/api/networking/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/intstr"
+
+	"github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/controller"
+	"github.com/STRRL/cloudflare-tunnel-ingress-controller/test/fixtures"
 )
 
 const IntegrationTestNamespace = "cf-tunnel-ingress-controller-test"

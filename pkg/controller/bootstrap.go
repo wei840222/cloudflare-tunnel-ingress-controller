@@ -1,11 +1,12 @@
 package controller
 
 import (
-	cloudflarecontroller "github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/cloudflare-controller"
 	"github.com/go-logr/logr"
 	networkingv1 "k8s.io/api/networking/v1"
 	"sigs.k8s.io/controller-runtime/pkg/builder"
 	"sigs.k8s.io/controller-runtime/pkg/manager"
+
+	cloudflarecontroller "github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/cloudflare-controller"
 )
 
 type IngressControllerOptions struct {
@@ -23,11 +24,6 @@ func RegisterIngressController(logger logr.Logger, mgr manager.Manager, options 
 
 	if err != nil {
 		logger.WithName("register-controller").Error(err, "could not register ingress controller")
-		return err
-	}
-
-	if err != nil {
-		logger.WithName("register-controller").Error(err, "could not register ingress class controller")
 		return err
 	}
 

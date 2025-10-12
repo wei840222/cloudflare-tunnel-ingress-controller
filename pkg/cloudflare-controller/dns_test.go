@@ -4,8 +4,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/exposure"
 	"github.com/cloudflare/cloudflare-go"
+
+	"github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/exposure"
 )
 
 const WhateverTunnelId = "whatever"

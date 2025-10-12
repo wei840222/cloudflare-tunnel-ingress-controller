@@ -5,9 +5,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/exposure"
 	"github.com/cloudflare/cloudflare-go"
 	"k8s.io/utils/ptr"
+
+	"github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/exposure"
 )
 
 func Test_fromExposureToCloudflareIngress(t *testing.T) {

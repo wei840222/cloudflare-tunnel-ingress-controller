@@ -4,15 +4,16 @@ import (
 	"context"
 	"os"
 
-	cloudflarecontroller "github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/cloudflare-controller"
-	"github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/controller"
-	"github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/exposure"
-	"github.com/STRRL/cloudflare-tunnel-ingress-controller/test/fixtures"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 	appsv1 "k8s.io/api/apps/v1"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/types"
+
+	cloudflarecontroller "github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/cloudflare-controller"
+	"github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/controller"
+	"github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/exposure"
+	"github.com/STRRL/cloudflare-tunnel-ingress-controller/test/fixtures"
 )
 
 var _ cloudflarecontroller.TunnelClientInterface = &MockTunnelClient{}

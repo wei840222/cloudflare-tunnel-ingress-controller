@@ -6,8 +6,6 @@ import (
 	"os"
 	"time"
 
-	cloudflarecontroller "github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/cloudflare-controller"
-	"github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/controller"
 	"github.com/cloudflare/cloudflare-go"
 	"github.com/go-logr/logr"
 	"github.com/go-logr/stdr"
@@ -15,6 +13,9 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client/config"
 	crlog "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/manager"
+
+	cloudflarecontroller "github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/cloudflare-controller"
+	"github.com/STRRL/cloudflare-tunnel-ingress-controller/pkg/controller"
 )
 
 type rootCmdFlags struct {
@@ -22,14 +23,14 @@ type rootCmdFlags struct {
 	// for annotation on Ingress
 	ingressClass string
 	// for IngressClass.spec.controller
-	controllerClass       string
-	logLevel              int
-	cloudflareAPIToken    string
-	cloudflareAccountId   string
-	cloudflareTunnelName  string
-	namespace             string
-	cloudflaredProtocol   string
-	cloudflaredExtraArgs  []string
+	controllerClass      string
+	logLevel             int
+	cloudflareAPIToken   string
+	cloudflareAccountId  string
+	cloudflareTunnelName string
+	namespace            string
+	cloudflaredProtocol  string
+	cloudflaredExtraArgs []string
 }
 
 func main() {
