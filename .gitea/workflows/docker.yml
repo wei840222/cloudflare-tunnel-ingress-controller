@@ -90,7 +90,7 @@ jobs:
         working-directory: manifests
         run: |
           export IMAGE_NAME_LOWER=$(echo "${{ env.IMAGE_NAME }}" | tr '[:upper:]' '[:lower:]')
-          cd kubernetes/cluster-infra/cloudflare-tunnel-ingress-controller
+          cd kubernetes/cluster-infra/cloudflared
           kustomize edit set image cr.strrl.dev/strrl/cloudflare-tunnel-ingress-controller=${{ env.REGISTRY }}/$(echo "${{ env.IMAGE_NAME }}" | tr '[:upper:]' '[:lower:]'):${{ gitea.ref_name }}
           git add .
           git commit -m "Update ${{ env.REGISTRY }}/$(echo "${{ env.IMAGE_NAME }}" | tr '[:upper:]' '[:lower:]') image to ${{ gitea.ref_name }}"
