@@ -6,7 +6,7 @@ dev:
 
 .PHONY: image
 image:
-	DOCKER_BUILDKIT=1 TARGETARCH=amd64 docker build -t ghcr.io/strrl/cloudflare-tunnel-ingress-controller -f ./image/cloudflare-tunnel-ingress-controller/Dockerfile . 
+	DOCKER_BUILDKIT=1 docker build -t ghcr.io/strrl/cloudflare-tunnel-ingress-controller -f ./image/cloudflare-tunnel-ingress-controller/Dockerfile . 
 
 .PHONY: unit-test
 unit-test:
@@ -18,7 +18,7 @@ integration-test: setup-envtest
 
 .PHONY: e2e-image
 e2e-image:
-	DOCKER_BUILDKIT=1 TARGETARCH=amd64 docker build -t $(E2E_CONTROLLER_IMAGE) -f ./image/cloudflare-tunnel-ingress-controller/Dockerfile .
+	DOCKER_BUILDKIT=1 docker build -t $(E2E_CONTROLLER_IMAGE) -f ./image/cloudflare-tunnel-ingress-controller/Dockerfile .
 
 .PHONY: e2e
 e2e: e2e-image

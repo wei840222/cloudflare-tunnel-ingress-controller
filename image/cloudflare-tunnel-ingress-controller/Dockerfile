@@ -10,7 +10,7 @@ RUN go mod download && go mod verify
 # Build
 COPY  . .
 RUN --mount=type=cache,target=/go \
-  CGO_ENABLED=0 GOOS=linux GOARCH=$TARGETARCH GO111MODULE=on \
+  CGO_ENABLED=0 GO111MODULE=on \
   go build -ldflags="-s -w" -o cloudflare-tunnel-ingress-controller ./cmd/cloudflare-tunnel-ingress-controller
 
 # Use distroless as minimal base image to package the manager binary
